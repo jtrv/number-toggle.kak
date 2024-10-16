@@ -29,16 +29,16 @@ define-command -hidden number-toggle-uninstall-focus-hooks %{
   remove-hooks window number-toggle-focus
 }
 
-define-command disable-number-toggle %{ set-option window number_toggle_show_lines false }
+define-command number-toggle-disable %{ set-option window number_toggle_show_lines false }
 
-define-command enable-number-toggle %{ set-option window number_toggle_show_lines true }
+define-command number-toggle-enable %{ set-option window number_toggle_show_lines true }
 
-define-command toggle-number-toggle %{
+define-command number-toggle-toggle %{
   evaluate-commands %sh{
     if [ "$kak_opt_number_toggle_show_lines" = "true" ]; then
-      echo "disable-number-toggle"
+      echo "number-toggle-disable"
     else
-      echo "enable-number-toggle"
+      echo "number-toggle-enable"
     fi
   }
   number-toggle-refresh
