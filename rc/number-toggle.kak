@@ -45,7 +45,7 @@ define-command number-toggle-enable %{
 
 define-command number-toggle-disable %{
   set-option window number_toggle_state ''
-	remove-hooks window number-toggle-*
+  remove-hooks window number-toggle-.*
   remove-highlighter window/number-toggle
   set-option window number_toggle_enabled false
 }
